@@ -39,17 +39,21 @@ A stripped-down, developer-first WordPress theme built for performance, clarity,
 
 ```text
 simple-essence/
-├── functions.php           # Core logic and optimization
-├── index.php               # Main template router
-├── style.css               # Theme info + optional minimal styles
-├── screenshot.jpg          # Theme image
+├── functions.php               # Main functions file, where we include files from the includes folder
+├── index.php                   # Main template router
+├── style.css                   # Theme info + optional minimal styles
+├── screenshot.jpg              # Theme image
 ├── page-templates/
-│   ├── 404.php             # Custom 404 template
-│   ├── archive.php         # Loop for archives
-│   ├── search.php          # Search results layout
-│   └── single.php          # Single post/page layout
-├── header.php              # Site header markup
-└── footer.php              # Site footer markup
+│   ├── 404.php                 # Custom 404 template
+│   ├── archive.php             # Loop for archives
+│   ├── search.php              # Search results layout
+│   └── single.php              # Single post/page layout
+├── includes/
+│   ├── theme-support.php       # Theme support functions (e.g., title-tag, post-thumbnails)
+│   ├── optimizations.php       # Optimization-related code (e.g., removing WordPress bloat)
+│   └── custom-functions.php    # Custom helper functions or additional customizations
+├── header.php                  # Site header markup
+└── footer.php                  # Site footer markup
 ```
 
 ---
@@ -58,7 +62,7 @@ simple-essence/
 
 1. Clone or download the theme:
 ```bash
-git clone https://github.com/YOUR-GITHUB-USERNAME/simple-essence-theme.git
+git clone https://github.com/RickOnGitHub/simple-essence-theme.git
 ```
 2. Move the folder to your WordPress wp-content/themes/ directory.
 

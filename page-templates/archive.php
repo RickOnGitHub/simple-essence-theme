@@ -1,29 +1,30 @@
-<?php
-// Check for posts or pages
-if (have_posts()) :
-?>
-    <main class="seth-archive">
-        <section class="seth-archive-content">
-            <?php
-            if (have_posts()) :
-                while (have_posts()) : the_post();
-                    $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
-            ?>
-                    <a class="seth-archive-link" href="<?php the_permalink(); ?>">
-                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<main class="seth-archive">
+    <section class="seth-archive-content">
+        <?php
+        // Check for posts or pages
+        if (have_posts()) :
+            // Loop through the results
+            while (have_posts()) :
+                // Populate the global variable with the post or page data
+                the_post();
+        ?>
+                <a class="seth-archive-link" href="<?php the_permalink(); ?>">
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                        </article>
-                    </a>
+                    </article>
+                </a>
             <?php
-                endwhile;
+            endwhile;
 
-                // Reset the global post data
-                wp_reset_postdata();
-            else :
-                echo '<p>' . __('Sorry, no results found.', 'simple-essence') . '</p>';
-            endif;
+            // Reset the global post data
+            wp_reset_postdata();
+        else : // If no posts are found, display a message
             ?>
-        </section>
-    </main>
-<?php
-endif;
+            <div class="seth-no-posts">
+                <p><?php esc_html_e('Sorry, no posts matched your criteria.', 'textdomain'); ?></p>
+            </div>
+        <?php
+        endif;
+        ?>
+    </section>
+</main>

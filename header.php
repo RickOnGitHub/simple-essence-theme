@@ -7,4 +7,4 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('simple-essence-thema'); ?>>
+<body <?php body_class('simple-essence-theme'); ?>>

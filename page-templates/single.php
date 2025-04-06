@@ -1,15 +1,13 @@
-<?php
-// Check for posts or pages
-if (have_posts()) :
-?>
-    <main class="seth-single">
-        <section class="seth-single-content">
-            <?php
+<main class="seth-single">
+    <section class="seth-single-content">
+        <?php
+        // Check for posts or pages
+        if (have_posts()) :
             // Loop through the results
             while (have_posts()) :
-                /// Populate the global variable with the post or page data
+                // Populate the global variable with the post or page data
                 the_post();
-            ?>
+        ?>
                 <div>
                     <?php the_content(); ?>
                 </div>
@@ -18,8 +16,13 @@ if (have_posts()) :
 
             // Reset the global post data
             wp_reset_postdata();
+        else : // if no posts are found, display a message
             ?>
-        </section>
-    </main>
-<?php
-endif;
+            <div class="seth-no-posts">
+                <p><?php esc_html_e('Sorry, no posts matched your criteria.', 'textdomain'); ?></p>
+            </div>
+        <?php
+        endif;
+        ?>
+    </section>
+</main>

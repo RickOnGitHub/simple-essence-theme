@@ -8,5 +8,5 @@ require get_template_directory() . '/includes/theme-support.php';
 // Include optimization functions
 require get_template_directory() . '/includes/optimizations.php';
 
-// Include custom helper functions
-require get_template_directory() . '/includes/custom-functions.php';
+// Include enqueue functions
+require get_template_directory() . '/includes/enqueue-assets.php';

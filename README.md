@@ -51,7 +51,7 @@ simple-essence/
 ├── includes/
 │   ├── theme-support.php       # Theme support functions (e.g., title-tag, post-thumbnails)
 │   ├── optimizations.php       # Optimization-related code (e.g., removing WordPress bloat)
-│   └── custom-functions.php    # Custom helper functions or additional customizations
+│   └── enqueue-assets.php      # Enque styles and scripts
 ├── header.php                  # Site header markup
 └── footer.php                  # Site footer markup
 ```

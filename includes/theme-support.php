@@ -23,5 +23,12 @@ function seth_setup()
             'caption'
         )
     );
+
+    // Add primary menu support
+    register_nav_menus(
+        array(
+            'primary' => __('Primary Menu', 'seth'),
+        )
+    );
 }
 add_action('after_setup_theme', 'seth_setup');
